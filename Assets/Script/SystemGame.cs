@@ -7,8 +7,11 @@ using UnityEngine.SceneManagement;
 public class SystemGame : MonoBehaviour
 {
     bool paused;
-    public GameObject framePause;
+    public GameObject framePause, audioGame;
     public string Level;
+    
+    
+    
     void Start()
     {
         
@@ -26,12 +29,16 @@ public class SystemGame : MonoBehaviour
     {
         Time.timeScale = 0;
         framePause.SetActive(true);
+        audioGame.SetActive(false);
+        
+        
     }
 
     void UnPause()
     {
         Time.timeScale = 1;
         framePause.SetActive(false);
+        audioGame.SetActive(true);
     }
 
     void PauseGame()
